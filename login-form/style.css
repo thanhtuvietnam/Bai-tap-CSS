@@ -15,13 +15,10 @@
   box-sizing: border-box;
   color: azure;
 }
+body,
 a {
-  text-decoration: none;
-}
-body {
-  /* background: var(--bg-color); */
   font-family: var(--font-family);
-  width: 100%;
+  text-decoration: none;
 }
 /* -------------------------------- CONTAINER ------------------------------- */
 .container {
@@ -133,7 +130,6 @@ body {
 
 .title {
   animation: doimau 2s ease-in-out infinite alternate;
-  /* transition: 0.5s ease-in-out; */
 }
 @keyframes doimau {
   0% {
@@ -146,6 +142,6 @@ body {
     color: #ff9cda;
   }
   90% {
-    color: #041B2D;
+    color: #041b2d;
   }
 }

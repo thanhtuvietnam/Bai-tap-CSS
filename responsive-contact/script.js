@@ -1,40 +1,49 @@
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+/* -------------------- ấn nút hiện ra đối với responsive ------------------- */
+function toggleVisibility() {
+  var element = document.getElementById('rightSide');
+  if (element.style.display === 'block') {
+    element.style.display = 'none';
+  } else {
+    element.style.display = 'block';
+  }
+}
 
-    // Lấy dữ liệu từ form
-    var name = document.getElementById("nameInput").value;
-    var email = document.getElementById("emailInput").value;
-    var message = document.getElementById("messageInput").value;
+/* -------------------------------------------------------------------------- */
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-    // Tạo một đối tượng để chứa dữ liệu
-    var data = {
-      name: name,
-      email: email,
-      message: message,
-    };
+  // Lấy dữ liệu từ form
+  var name = document.getElementById('nameInput').value;
+  var email = document.getElementById('emailInput').value;
+  var message = document.getElementById('messageInput').value;
 
-    // Gửi dữ liệu đến JSON Server
-    fetch("http://localhost:3000/contacts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  });
+  // Tạo một đối tượng để chứa dữ liệu
+  var data = {
+    name: name,
+    email: email,
+    message: message,
+  };
+
+  // Gửi dữ liệu đến JSON Server
+  fetch('http://localhost:3000/contacts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+});
 /* ---------------------------- in ra console log --------------------------- */
-fetch("http://localhost:3000/contacts")
+fetch('http://localhost:3000/contacts')
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => {
-    console.error("Error:", error);
+    console.error('Error:', error);
   });
 
 /* ----------------------------- in ra màn hình ----------------------------- */

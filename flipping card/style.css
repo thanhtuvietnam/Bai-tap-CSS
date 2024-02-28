@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+	--ff: "Poppins", sans-serif;
+	--font-weight: 400;
+	--font-weight-medium: 500;
+	--bg: #121321;
+	--bg-before: linear-gradient(90deg, #9c27b0, #f3f5f5);
+	--box-shadow: 0 25px 45px rgba(255, 255, 255, 0.1);
+}
+
+/* --------------------------------- căn lề --------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--ff);
+	color: whitesmoke;
+	font-weight: lighter;
+}
+
+section {
+	background: var(--bg);
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+}
+
+/* -------------------------------- 2 hình tròn ------------------------------- */
+section::before {
+	content: "";
+	position: absolute;
+	height: 240px;
+	width: 240px;
+	border-radius: 50%;
+	transform: translate(-150px, -100px);
+	background: var(--bg-before);
+}
+
+section::after {
+	content: "";
+	position: absolute;
+	height: 240px;
+	width: 240px;
+	border-radius: 50%;
+	transform: translate(150px, 100px);
+	background: var(--bg-before);
+}
+
+/* --------------------------- khung container bọc -------------------------- */
+.container {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: var(--box-shadow);
+	backdrop-filter: blur(25px);
+	width: 400px;
+	height: 250px;
+	border-radius: 25px;
+	position: absolute;
+	z-index: 100;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+/* ------------------------------- logo + chữ ------------------------------- */
+.logo img {
+	width: 50px;
+}
+
+.logo h5 {
+	font-size: 16px;
+	font-weight: var(--font-weight);
+	margin-left: 10px;
+}
+
+.front-face .chip {
+	width: 50px;
+	margin-right: 10px;
+}
+
+.front-face header,
+.front-face .logo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.card-details {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 30px 0 0px 20px;
+}
+
+.valid-date {
+	margin: 80px 20px 0 0;
+}
+
+h5.number {
+	letter-spacing: 2px;
+}
+
+.name,
+.number {
+	font-size: 20px;
+	font-weight: lighter;
+	margin-top: 20px;
+}
+/* --------------------------------- mặt sau -------------------------------- */
+.back-face {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: var(--box-shadow);
+	backdrop-filter: blur(25px);
+	width: 400px;
+	height: 250px;
+	border-radius: 25px;
+	position: absolute;
+	z-index: 100;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	margin-top: 30px;
+	transform: rotateY(180deg);
+	top: -32px;
+
+}
+
+.content {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.content .magnetic-strip {
+	position: absolute;
+	left: 0;
+	background: #000;
+	height: 45px;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.signature {
+	margin-top: 80px;
+	display: flex;
+	margin-left: 20px;
+	background-color: #fff;
+	border-radius: 6px;
+	width: 90%;
+}
+
+.signature i {
+	color: #000;
+}
+
+/* --------------------------------- rotate --------------------------------- */
+.container {
+	perspective: 1000px;
+	/* Create 3D space */
+	transition: 0.7s ease-in-out;
+	/* transform-style: preserve-3d ; */
+	cursor: pointer;
+	animation: xoay 10s ease-in-out infinite;
+}
+
+.front-face {
+	transform: rotateY(180deg);
+}
+
+.back-face {
+	backface-visibility: hidden;
+	transform: rotateY(0deg);
+}
+
+/* .container:hover {
+    transform: rotateY(-180deg); 
+} */
+@keyframes xoay {
+	0% {
+		transform: rotateY(0deg);
+	}
+
+	50% {
+		transform: rotateY(180deg);
+	}
+
+	75% {
+		transform: rotateY(360deg);
+	}
+}

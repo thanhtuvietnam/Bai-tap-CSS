@@ -1,70 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-*,
-*::before,
-*::after {
-   margin: 0;
-   padding: 0;
-   box-sizing: 0;
-}
 body {
-   font-family: 'Poppins', sans-serif;
-   text-rendering: optimizeLegibility;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   scroll-behavior: smooth;
-   min-height: 100vh;
+   background: grey;
    display: flex;
-   align-items: center;
    justify-content: center;
-   background-color: rgb(152, 152, 152);
+   align-items: center;
+   min-height: 100vh;
 }
-.container {
-   max-width: 1200px;
-   width: 95%;
-}
-.slider-wrapper .image-list {
-   display: grid;
-   grid-template-columns: repeat(10, 1fr);
-   gap: 18px;
-   font-size: 0;
-   overflow-x: auto;
-   scrollbar-width: 20px;
-   scroll-behavior: smooth;
-   scrollbar-color: rgb(165, 174, 169);
-}
-.image-item {
-   width: 20.313rem;
-   height: 25rem;
-   object-fit: cover;
+.container{
+    width: 80%;
 }
 
-.container .slider-scrollbar {
-   /* background: #000; */
-   height: 2px;
-   width: 100%;
-   display: flex;
-   align-items: center;
+.owl-carousel{
+    display: flex;
 }
-.slider-scrollbar .scrollbar-track {
-   position: relative;
-   height: 2px;
-   width: 100%;
-   background: #ccc;
-   border-radius: 4px;
-}
-.slider-scrollbar .scrollbar-thumb {
-   position: absolute;
-   height: 100%;
-   width: 50%;
-   background: #111010;
-   border-radius: inherit;
-   cursor: grab;
-}
-.slider-scrollbar .scrollbar-thumb::after {
-   content: '';
-   position: absolute;
-   left: 0;
-   right: 0;
-   top: -10px;
+.container .owl-carousel .item img{
+    height: 40rem;
+    width: 100%;
 }

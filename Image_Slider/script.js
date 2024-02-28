@@ -1,5 +1,5 @@
 // đổi ảnh
-const addImg = document.querySelectorAll('.container .slider-wrapper .image-list .image-item');
+const addImg = document.querySelectorAll('.container .owl-carousel .item img');
 // get ảnh từ api về
 async function getRandomImages() {
    let unsplashApi = 'https://api.unsplash.com/photos/?client_id=9qbcWqRufKOCxqV3NhEryGCBuXtVNHx3zJx7ssJ9QOw';
@@ -8,7 +8,7 @@ async function getRandomImages() {
       const data = await response.json();
       console.log(data);
       addImg.forEach(function (img, index) {
-         img.src = data[index].urls.thumb + "&w=100&dpr=2";
+         img.src = data[index].urls.thumb + '&w=100&dpr=2';
       });
    } catch (error) {
       console.error(`bạn đã gặp lỗi... `);

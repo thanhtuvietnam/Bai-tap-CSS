@@ -10,8 +10,6 @@
 body {
    font-family: 'Poppins', sans-serif;
    text-rendering: optimizeLegibility;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
    scroll-behavior: smooth;
    min-height: 100vh;
    display: flex;
@@ -28,8 +26,10 @@ body {
    grid-template-columns: repeat(10, 1fr);
    gap: 18px;
    font-size: 0;
+   list-style: none;
+   margin-bottom: 30px;
    overflow-x: auto;
-   scrollbar-width: 20px;
+   scrollbar-width: none;
    scroll-behavior: smooth;
    scrollbar-color: rgb(165, 174, 169);
 }
@@ -41,30 +41,87 @@ body {
 
 .container .slider-scrollbar {
    /* background: #000; */
-   height: 2px;
+   height: 24px;
    width: 100%;
    display: flex;
    align-items: center;
 }
 .slider-scrollbar .scrollbar-track {
-   position: relative;
-   height: 2px;
-   width: 100%;
    background: #ccc;
+   width: 100%;
+   height: 2px;
+   display: flex;
+   align-items: center;
    border-radius: 4px;
+   position: relative;
+}
+.slider-scrollbar:hover .scrollbar-track {
+   height: 4px;
 }
 .slider-scrollbar .scrollbar-thumb {
    position: absolute;
-   height: 100%;
+   background: #000;
+   top: 0;
+   bottom: 0;
    width: 50%;
-   background: #111010;
-   border-radius: inherit;
+   height: 100%;
    cursor: grab;
+   border-radius: inherit;
 }
+.slider-scrollbar .scrollbar-thumb:active {
+   cursor: grabbing;
+   height: 8px;
+   top: -2px;
+}
+
 .slider-scrollbar .scrollbar-thumb::after {
    content: '';
    position: absolute;
    left: 0;
    right: 0;
    top: -10px;
+   bottom: -10px;
+}
+/* --------------------------------- button --------------------------------- */
+.slider-wrapper {
+   position: relative;
+}
+.slider-wrapper .slide-button {
+   position: absolute;
+   top: 50%;
+   outline: none;
+   border: none;
+   height: 50px;
+   width: 50px;
+   color: #fff;
+   background: #000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   transform: translateY(-50%);
+}
+.slider-wrapper .slide-button:hover {
+   background: #444;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+   left: -20px;
+}
+.slider-wrapper .slide-button#next-slide {
+   right: -20px;
+}
+
+/* ------------------------------- media query ------------------------------ */
+@media only screen and (max-width: 1023px) {
+   .slider-wrapper .slide-button {
+      display: none !important;
+   }
+   .slider-wrapper .image-list .image-item {
+      width: 280px;
+      height: 380px;
+   }
+   .slider-scrollbar .scrollbar-thumb {
+      width: 20%;
+   }
 }

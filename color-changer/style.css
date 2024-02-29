@@ -1,0 +1,48 @@
+:root {
+   --background-color: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(30, 28, 74, 1) 72%, rgba(11, 11, 29, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+*,
+*::before,
+*::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: var(--background-color);
+}
+.container {
+   width: 31.25rem;
+   height: 31.25rem;
+   display: grid;
+   place-items: center;
+   box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.5);
+   border-radius: 1.625rem;
+}
+#result-box {
+   width: 20rem;
+   height: 20rem;
+   border: 2px inset #000;
+}
+#input-box {
+   height: 3.25rem;
+   width: 65%;
+   text-align: center;
+   font-size: 1.25rem;
+   border-radius: 0.625rem;
+   border: none;
+   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+}
+#input-box:focus {
+   background: rgb(215, 221, 199);
+}
+
+.dark {
+   background: white;
+   color: black;
+}

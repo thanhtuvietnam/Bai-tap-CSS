@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="./style.css" class="style" />
+   </head>
+   <body>
+      <div class="container">
+         <form action="" class="weather__form">
+            <input type="text" class="city__input" placeholder="điền tên thành phố vào đây" /><br />
+            <button id="btn" type="submit">get weather</button>
+         </form>
+         <button id="myButton">change theme</button>
+         <div class="card" style="display: none">
+            <h1 class="city__display">Miamy</h1>
+            <p class="temp__display">90°F</p>
+            <p class="humdity__display">Humidity: 75%</p>
+            <p class="desc__display">Clear Skies</p>
+            <p class="weather__emoji">☀️</p>
+            <p class="error__display">Làm ơn hãy nhập tên thành phố</p>
+         </div>
+         <script type="module" src="main.js"></script>
+         <!-- <script src="./changeTheme.js"></script> -->
+      </div>
+   </body>
+</html>

@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(43, 43, 64) 0%, rgb(0, 212, 255) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  background: linear-gradient(90deg, rgb(0, 19, 36) 0%, rgb(43, 43, 64) 0%, rgb(95, 91, 100) 100%, rgb(0, 212, 255) 100%);
+  border-radius: 20px 20px 0 0;
+  border: 1px inset #000;
+  width: 40rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container .container__title {
+  font-size: 20px;
+  margin-bottom: 0.625rem;
+  text-transform: capitalize;
+  color: yellow;
+}
+.container .container__input {
+  width: 100%;
+  padding: 1.25rem;
+}
+.container .container__input #inputPlace {
+  margin-bottom: 1.25rem;
+  width: 100%;
+  height: 2.25rem;
+  border-radius: 0.625rem;
+  border: none;
+  outline: none;
+}
+.container .container__input .btn {
+  display: flex;
+  gap: 1.25rem;
+}
+.container .container__input #btnAdd,
+.container .container__input #save__Btn {
+  font-size: 18px;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.wrapper {
+  border-radius: 0 0 20px 20px;
+  border: 1px inset #000;
+  background: linear-gradient(90deg, rgb(0, 19, 36) 0%, rgb(43, 43, 64) 0%, rgb(95, 91, 100) 100%, rgb(0, 212, 255) 100%);
+  width: 40rem;
+  height: 600px;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper .container__task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #221616;
+  border-radius: 4px;
+  width: 100%;
+}
+.wrapper .container__task .edit__Btn,
+.wrapper .container__task .delete__Btn {
+  background-color: #009688;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.wrapper .container__task .edit__Btn:hover,
+.wrapper .container__task .delete__Btn:hover {
+  background-color: #00796b;
+}
+.wrapper .container__task .edit__Btn:focus,
+.wrapper .container__task .delete__Btn:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.wrapper .container__task .edit__Btn:active,
+.wrapper .container__task .delete__Btn:active {
+  background-color: #00695c;
+}
+.wrapper .container__task .label__input {
+  font-size: 30px;
+  color: #cfaeae;
+  word-wrap: break-word;
+}
+.wrapper .container__task .checkbox {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 2px solid #009688;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.wrapper .container__task .checkbox:checked {
+  background-color: #009688;
+}
+.wrapper .container__task .checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=style.css.map */
